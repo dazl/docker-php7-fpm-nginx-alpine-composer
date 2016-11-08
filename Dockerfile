@@ -3,7 +3,7 @@ FROM php:7.0-fpm-alpine
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Install nginx — everything below this line taken from
+# Install nginx — most of the RUN command taken from
 # https://github.com/nginxinc/docker-nginx/blob/master/stable/alpine/Dockerfile
 ENV NGINX_VERSION 1.10.2
 
@@ -124,10 +124,10 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 	# forward request and error logs to docker log collector
 	&& ln -sf /dev/stdout /var/log/nginx/access.log \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log \
-  \
-  # install and configure supervisord
-  # see https://docs.docker.com/engine/admin/using_supervisord/
-  && apk add --no-cache --virtual supervisor
+	\
+	# install and configure supervisord
+	# see https://docs.docker.com/engine/admin/using_supervisord/
+	&& apk add --no-cache --virtual supervisor
 
 
 COPY nginx.conf /etc/nginx/nginx.conf

@@ -7,10 +7,12 @@ This image:
  - adds nginx:1.10.2-alpine with its nginx.conf and a modified nginx.vh.default.conf
  - installs and configures supervisord per [docker docs](https://docs.docker.com/engine/admin/using_supervisord/)
 
+The image is available on [Docker Hub](https://hub.docker.com/r/dazl/php7-fpm-nginx-alpine-composer/)
+
 #### Example Dockerfile:
 
 ```
-FROM <imageuri>
+FROM dazl/php7-fpm-nginx-alpine-composer:v1.0
 
 # copy your php source code from src folder
 COPY src/ /usr/share/nginx/html/

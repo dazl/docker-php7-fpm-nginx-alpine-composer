@@ -2,12 +2,17 @@
 
 This image:
 
- - starts from php:7.0-fpm-alpine
+ - starts from php:7.1-fpm-alpine
  - installs composer
  - adds nginx:1.10.2-alpine with its nginx.conf and a modified nginx.vh.default.conf
  - installs and configures supervisord per [docker docs](https://docs.docker.com/engine/admin/using_supervisord/)
 
 The image is available on [Docker Hub](https://hub.docker.com/r/dazl/php7-fpm-nginx-alpine-composer/)
+
+| tag  | php | nginx  |
+|------|-----|--------|
+| v1.0 | 7.0 | 1.10.2 |
+| v1.1 | 7.1 | 1.10.2 |
 
 #### Example Dockerfile:
 
